@@ -1,0 +1,55 @@
+//*******************************************************************
+// Welcome to CompileJava!
+// If you experience any issues, please contact us ('More Info')  -->
+//*******************************************************************
+
+import java.lang.Math; // headers MUST be above the first class
+
+// one class needs to have a main() method
+public class HelloWorld
+{
+  // arguments are passed using the text field below this editor
+  public static void main(String[] args)
+  {
+    OtherClass myObject = new OtherClass("Hello World!");
+    System.out.print(myObject);
+    int[] a = {2,3,4,-2,10,21,5};
+	myObject.maxDifference(a);
+  }
+}
+
+// you can add other public classes to this editor in any order
+public class OtherClass
+{
+  private String message;
+  private boolean answer = false;
+  public OtherClass(String input)
+  {
+    message = "Why, " + input + " Isn't this something?";
+  }
+  public String toString()
+  {
+    return message;
+  }
+  
+  public void maxDifference(int[] a){
+    int maxDiff = 0;
+    int first = a[0];
+    int second = a[1];
+    for(int i=0;i<a.length-1;i++){
+      for(int j = i+1;j<a.length ;j++){
+      int diff = a[i] - a[j];
+        //System.out.println(diff);
+      if(Math.abs(diff) > Math.abs(maxDiff)){
+        maxDiff = diff;
+        first = a[i];
+        second = a[j];
+      }
+    }
+    }
+    System.out.println(first);
+        System.out.println(second);
+    
+  
+}
+}
